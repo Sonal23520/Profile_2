@@ -15,6 +15,7 @@ html,
 body {
   height: 100%;
   color: white;
+  overflow: hidden;
 }
 h1,
 h2 {
@@ -31,7 +32,6 @@ h2 {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 40px;
-  /* border: 1px solid red;  */
   z-index: 1;
   overflow: hidden;
   transition: all 0.5s;
@@ -80,6 +80,7 @@ h2 {
 }
 
 .main-page-content {
+  width: 100vw;
   /* background-color: transparent;
     position: absolute;
     top: 50%;
@@ -92,12 +93,14 @@ h2 {
 .main-page-content h1 {
   font-family: "Bungee Hairline";
   font-size: 60px;
+  text-align: center;
 }
 
 .main-page-content h2 {
   font-family: "Lato";
   font-size: 16px;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 iframe {
@@ -173,6 +176,7 @@ iframe {
   width: 40px;
   transition: all 0.4s;
   display: none;
+  z-index: 5;
 }
 
 #move {
@@ -181,4 +185,38 @@ iframe {
 #home-page {
   top: 100%;
   transition: all 0.5s ease;
+}
+/* /////////////////////////////////////////Common/////////////////////// */
+#about-title,
+#service-title,
+#skills-title,
+#assignment-title,
+#contact-title {
+  font-family: "Bungee Hairline";
+  font-weight: bold;
+  text-align: end;
+}
+/* ////////////////////////////////Nav Hover///////////////////////// */
+.main-nav i > h2 {
+  display: inline-block;
+  position: relative;
+  color: hsl(0, 0%, 100%);
+}
+
+.main-nav i > h2::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: hsl(0, 0%, 100%);
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.main-nav i > h2:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

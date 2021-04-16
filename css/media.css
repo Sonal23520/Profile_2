@@ -1,7 +1,7 @@
 @media only screen and (max-width: 480px) {
   #hamburge {
     display: block;
-    z-index: 1;
+    z-index: 1000;
   }
   .main-nav {
     /* background: rgb(255, 255, 255, 0.2); */
@@ -21,6 +21,10 @@
   .main-page-content > h1 {
     width: 100vw;
     font-size: 36px;
+    text-align: center;
+  }
+  .main-page-content h2 {
+    text-align: center;
   }
   .main-nav i > h2 {
     left: 0;
@@ -28,5 +32,12 @@
   }
   .main-nav:hover i > h2 {
     left: 0;
+  }
+  #about-title,
+  #service-title,
+  #skills-title,
+  #assignment-title,
+  #contact-title {
+    text-align-last: justify;
   }
 }
