@@ -11,7 +11,8 @@ function hideAll4() {
   $("#contact-page").css("bottom", "100%");
 }
 //DEFAULT//
-$("#home-page").css("top", "0");
+// $("#home-page").css("top", "0");
+$("#about-page").css("left", "0");
 //SCENES//
 $("#home-link").click(function (e) {
   hideAll();
@@ -55,3 +56,16 @@ $("#contact-link").click(function (e) {
   hideAll4();
   $("#contact-page").css("bottom", "0");
 });
+
+$(".main-nav").hover(
+  function () {
+    $(
+      "#about-page,#service-page,#assignment-page,#contact-page,#skills-page"
+    ).css("filter", "blur(4px)");
+  },
+  function () {
+    $(
+      "#about-page,#service-page,#assignment-page,#contact-page,#skills-page"
+    ).css("filter", "blur(0px)");
+  }
+);
