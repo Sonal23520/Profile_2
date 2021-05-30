@@ -14,19 +14,19 @@ var starCount;
 var circleRadius;
 var circleCenter;
 var first = true;
-var giantColor = "180,184,240";
-var starColor = "226,225,142";
-var cometColor = "226,225,224";
-var canva = document.getElementById("universe");
+var giantColor = '180,184,240';
+var starColor = '226,225,142';
+var cometColor = '226,225,224';
+var canva = document.getElementById('universe');
 var stars = [];
 
 windowResizeHandler();
-window.addEventListener("resize", windowResizeHandler, false);
+window.addEventListener('resize', windowResizeHandler, false);
 
 createUniverse();
 
 function createUniverse() {
-  universe = canva.getContext("2d");
+  universe = canva.getContext('2d');
 
   for (var i = 0; i < starCount; i++) {
     stars[i] = new Star();
@@ -95,20 +95,20 @@ function Star() {
     universe.beginPath();
 
     if (this.giant) {
-      universe.fillStyle = "rgba(" + giantColor + "," + this.opacity + ")";
+      universe.fillStyle = 'rgba(' + giantColor + ',' + this.opacity + ')';
       universe.arc(this.x, this.y, 2, 0, 2 * Math.PI, false);
     } else if (this.comet) {
-      universe.fillStyle = "rgba(" + cometColor + "," + this.opacity + ")";
+      universe.fillStyle = 'rgba(' + cometColor + ',' + this.opacity + ')';
       universe.arc(this.x, this.y, 1.5, 0, 2 * Math.PI, false);
 
       //comet tail
       for (var i = 0; i < 30; i++) {
         universe.fillStyle =
-          "rgba(" +
+          'rgba(' +
           cometColor +
-          "," +
+          ',' +
           (this.opacity - (this.opacity / 20) * i) +
-          ")";
+          ')';
         universe.rect(
           this.x - (this.dx / 4) * i,
           this.y - (this.dy / 4) * i - 2,
@@ -118,7 +118,7 @@ function Star() {
         universe.fill();
       }
     } else {
-      universe.fillStyle = "rgba(" + starColor + "," + this.opacity + ")";
+      universe.fillStyle = 'rgba(' + starColor + ',' + this.opacity + ')';
       universe.rect(this.x, this.y, this.r, this.r);
     }
 
@@ -132,6 +132,7 @@ function Star() {
     if (this.fadingOut === false) {
       this.reset();
     }
+
     if (this.x > width - width / 4 || this.y < 0) {
       this.fadingOut = true;
     }
@@ -162,8 +163,8 @@ function windowResizeHandler() {
     y: height / 2,
   };
 
-  canva.setAttribute("width", width);
-  canva.setAttribute("height", height);
+  canva.setAttribute('width', width);
+  canva.setAttribute('height', height);
 }
 
 AOS.init();

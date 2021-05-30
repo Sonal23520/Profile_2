@@ -172,8 +172,8 @@ iframe {
   /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   transition: all 0.4s;
   display: none;
   z-index: 5;
